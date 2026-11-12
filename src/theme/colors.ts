@@ -12,13 +12,19 @@ const brand = {
 
 export const authColors = {
   ...brand,
-  background: "#FFFFFF",
-  text: "#000000",
+  background: "#FAFAF9",
+  text: "#0C0D0F",
   muted: "#8A8A8A",
-  border: "#CCCCCC",
+  border: "#E4E4E1",
   placeholder: "#9A9A9A",
-  actionBg: "#000000",
+  actionBg: "#0C0D0F",
   actionText: "#FFFFFF",
+
+  field: "#FFFFFF",
+  subtext: "#6E7076",
+  blob: "#F0F0ED",
+  blobDeep: "#E6E6E2",
+  divider: "#E4E4E1",
 } as const;
 
 export const appColors = {

@@ -3,7 +3,7 @@ import { useState } from "react";
 import {
   AuthLayout,
   AuthButton,
-  AuthLink,
+  AuthFootnote,
   EmailField,
   PasswordField,
 } from "../../components/AuthForm";
@@ -42,7 +42,10 @@ export default function Registro({ navigation }: any) {
   }
 
   return (
-    <AuthLayout title="Faça seu Registro">
+    <AuthLayout
+      title="Criar conta"
+      subtitle="Leva menos de um minuto para começar a organizar suas contas."
+    >
       <EmailField
         value={email}
         error={errors.email}
@@ -53,7 +56,6 @@ export default function Registro({ navigation }: any) {
       />
 
       <PasswordField
-        label="Senha"
         placeholder="Crie uma senha"
         value={senha}
         error={errors.senha}
@@ -64,7 +66,6 @@ export default function Registro({ navigation }: any) {
       />
 
       <PasswordField
-        label="Confirmar Senha"
         placeholder="Confirme sua senha"
         value={confirmarSenha}
         error={errors.confirmarSenha}
@@ -74,12 +75,13 @@ export default function Registro({ navigation }: any) {
         }}
       />
 
-      <AuthLink
-        label="Já tem uma conta? Faça login"
+      <AuthButton label="Criar conta" onPress={handleRegistro} />
+
+      <AuthFootnote
+        question="Já tem uma conta?"
+        action="Faça login"
         onPress={() => navigation.navigate("Login")}
       />
-
-      <AuthButton label="Criar Conta" onPress={handleRegistro} />
     </AuthLayout>
   );
 }
