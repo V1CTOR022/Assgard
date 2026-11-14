@@ -133,7 +133,7 @@ export default function Dashboard({ navigation }: any) {
             </View>
 
             <Text style={styles.footnote}>
-              Últimos {bars.length} {bars.length === 1 ? "dia" : "dias"} com movimentação.
+              {bars.length} {bars.length === 1 ? "dia" : "dias"} com movimentação.
             </Text>
           </>
         )}
