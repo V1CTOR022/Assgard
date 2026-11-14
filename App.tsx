@@ -4,6 +4,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 import Splash from "./src/pages/splash";
+import Onboarding from "./src/pages/onboarding";
 import Login from "./src/pages/login";
 import Registro from "./src/pages/register";
 import Home from "./src/pages/Home/Index";
@@ -41,6 +42,7 @@ export default function App() {
         <NavigationContainer>
           <Stack.Navigator screenOptions={{ headerShown: false }}>
             <Stack.Screen name="Splash" component={Splash} />
+            <Stack.Screen name="Onboarding" component={Onboarding} />
             <Stack.Screen name="Login" component={Login} />
             <Stack.Screen name="Register" component={Registro} />
             <Stack.Screen name="Main" component={MainTabs} />
