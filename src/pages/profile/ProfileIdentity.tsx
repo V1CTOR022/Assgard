@@ -46,11 +46,13 @@ export default function ProfileIdentity({ netWorth }: { netWorth: number }) {
         onPress={changeAvatar}
         accessibilityLabel={avatarUri ? "Trocar foto de perfil" : "Escolher foto de perfil"}
       >
-        {avatarUri ? (
-          <Image source={{ uri: avatarUri }} style={styles.avatarPhoto} />
-        ) : (
-          <Feather name="user" size={30} color={appColors.text} />
-        )}
+        <View style={styles.avatarCircle}>
+          {avatarUri ? (
+            <Image source={{ uri: avatarUri }} style={styles.avatarPhoto} />
+          ) : (
+            <Feather name="user" size={30} color={appColors.text} />
+          )}
+        </View>
 
         <View style={styles.avatarBadge}>
           <Feather name="camera" size={12} color={appColors.actionText} />
@@ -106,6 +108,13 @@ export default function ProfileIdentity({ netWorth }: { netWorth: number }) {
 
 const styles = StyleSheet.create({
   avatar: {
+    width: 76,
+    height: 76,
+    alignItems: "center",
+    justifyContent: "center",
+    marginBottom: 14,
+  },
+  avatarCircle: {
     width: 72,
     height: 72,
     borderRadius: 36,
@@ -114,7 +123,6 @@ const styles = StyleSheet.create({
     backgroundColor: appColors.chrome,
     borderWidth: 1,
     borderColor: appColors.stroke,
-    marginBottom: 14,
     overflow: "hidden",
   },
   avatarPhoto: {
@@ -123,8 +131,8 @@ const styles = StyleSheet.create({
   },
   avatarBadge: {
     position: "absolute",
-    right: -2,
-    bottom: -2,
+    right: 0,
+    bottom: 0,
     width: 26,
     height: 26,
     borderRadius: 13,
