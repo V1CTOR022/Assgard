@@ -41,10 +41,6 @@ export default function Home({ navigation }: any) {
           <Image source={require("../../assets/logo.png")} style={styles.logo} />
 
           <Text style={styles.accountName}>{account.name}</Text>
-
-          <Bounce style={sharedStyles.iconButton} accessibilityLabel="Menu">
-            <Feather name="menu" size={20} color={appColors.text} />
-          </Bounce>
         </View>
 
         <View style={styles.balanceBlock}>
@@ -150,8 +146,8 @@ const styles = StyleSheet.create({
   cardHeader: {
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "space-between",
     paddingHorizontal: 20,
+    height: 54,
   },
   logo: {
     width: 54,
@@ -160,6 +156,10 @@ const styles = StyleSheet.create({
     tintColor: appColors.text,
   },
   accountName: {
+    position: "absolute",
+    left: 0,
+    right: 0,
+    textAlign: "center",
     fontSize: 15,
     fontWeight: "500",
     color: appColors.text,
