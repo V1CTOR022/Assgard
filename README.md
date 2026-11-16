@@ -9,21 +9,12 @@ O Assgard reúne suas contas em um só lugar, mostra o saldo somado em tempo rea
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178C6?logo=typescript&logoColor=white)
 ![Licença MIT](https://img.shields.io/badge/licen%C3%A7a-MIT-green)
 
-## Telas
+<img src="docs/preview.webp" alt="Assgard aberto na tela inicial, mostrando o saldo da conta, os atalhos e o histórico de transações">
 
-| Início | Histórico | Dashboard |
-|:---:|:---:|:---:|
-| <img src="docs/home.png" width="240" alt="Tela inicial com saldo e atalhos"> | <img src="docs/historico.png" width="240" alt="Histórico de transações com busca"> | <img src="docs/dashboard.png" width="240" alt="Gráfico de movimentação por dia"> |
-
-| Pendências | Perfil |
-|:---:|:---:|
-| <img src="docs/pendencias.png" width="240" alt="Contas a pagar, com uma vencida em vermelho"> | <img src="docs/perfil.png" width="240" alt="Perfil com patrimônio total e resumo das contas"> |
-
-Os valores das telas acima são dados de demonstração.
+Os valores da imagem são dados de demonstração.
 
 ## Sumário
 
-- [Telas](#telas)
 - [Funcionalidades](#funcionalidades)
 - [Como rodar](#como-rodar)
 - [Dependências](#dependências)
