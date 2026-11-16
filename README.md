@@ -1,8 +1,8 @@
 # Assgard
 
-Aplicativo de finanças pessoais para Android e iOS, feito em React Native com Expo.
+Aplicativo de finanças pessoais para Android e iOS, desenvolvido em React Native com Expo.
 
-O Assgard reúne suas contas em um só lugar, mostra o saldo somado em tempo real, registra entradas e saídas, avisa quando uma conta está perto de vencer e resume seus hábitos em um gráfico simples. Tudo fica salvo no próprio aparelho, sem servidor e sem cadastro obrigatório.
+O Assgard reúne suas contas em um só lugar, mostra o saldo total em tempo real, registra entradas e saídas, avisa quando uma conta está perto de vencer e resume seus hábitos em um gráfico simples. Tudo fica salvo no próprio aparelho, sem servidor e sem cadastro obrigatório.
 
 ![Expo SDK](https://img.shields.io/badge/Expo%20SDK-54-000020?logo=expo&logoColor=white)
 ![React Native](https://img.shields.io/badge/React%20Native-0.81.5-61DAFB?logo=react&logoColor=black)
@@ -27,7 +27,7 @@ Os valores da imagem são dados de demonstração.
 
 **Conversão em dólar.** O saldo também é mostrado em dólar, com a cotação buscada na hora. Se a internet falhar, o app continua funcionando normalmente.
 
-**Entradas, saídas e transferências.** Cada lançamento guarda nome, valor, conta e data, e entra direto no histórico.
+**Entradas, saídas e transferências.** Cada lançamento guarda nome, valor, conta e data, e entra diretamente no histórico.
 
 **Histórico com busca.** Procure por nome ou valor, com os totais de entradas e saídas sempre à vista.
 
@@ -37,9 +37,9 @@ Os valores da imagem são dados de demonstração.
 
 **Perfil.** Nome e foto editáveis, com o patrimônio total somado de todas as contas.
 
-**Saldo oculto.** Um toque esconde todos os valores, para quando tiver alguém olhando a tela.
+**Saldo oculto.** Um toque esconde todos os valores, para quando houver alguém olhando a tela.
 
-Toda a informação é gravada localmente com AsyncStorage. O app não envia seus dados financeiros para lugar nenhum.
+Toda a informação é armazenada localmente com AsyncStorage. O app não envia seus dados financeiros para lugar nenhum.
 
 ## Como rodar
 
@@ -50,10 +50,10 @@ Toda a informação é gravada localmente com AsyncStorage. O app não envia seu
 | Node.js | 20 ou maior | O Expo SDK 54 não roda em versões anteriores |
 | npm | 10 ou maior | Já vem junto com o Node |
 | JDK | 17 | Só para Android. O Android Studio instala um junto |
-| Android Studio | Qualquer recente | Para o emulador e o SDK do Android |
-| Xcode | 15 ou maior | Só para iOS, e só funciona no macOS |
+| Android Studio | Qualquer versão recente | Para o emulador e o SDK do Android |
+| Xcode | 15 ou maior | Só para iOS e funciona apenas no macOS |
 
-Você não precisa de conta no Expo nem de nenhuma chave de API para rodar o projeto.
+Você não precisa de uma conta no Expo nem de nenhuma chave de API para rodar o projeto.
 
 ### Passo a passo
 
@@ -75,7 +75,7 @@ npm install
 
 **3. Prepare um aparelho**
 
-Abra o Android Studio, vá em Device Manager e inicie um emulador. Ou conecte um celular Android por cabo com a depuração USB ativada.
+Abra o Android Studio, vá até o Device Manager e inicie um emulador. Ou conecte um celular Android por cabo, com a depuração USB ativada.
 
 Para conferir se o aparelho foi reconhecido:
 
@@ -95,7 +95,7 @@ No macOS, para iOS:
 npx expo run:ios
 ```
 
-A primeira execução demora, porque o Gradle compila o projeto nativo inteiro. Nas próximas, o app já estará instalado e você só precisa subir o servidor:
+A primeira execução demora porque o Gradle compila todo o projeto nativo. Nas próximas, o app já estará instalado e você só precisa iniciar o servidor:
 
 ```bash
 npx expo start
@@ -103,23 +103,23 @@ npx expo start
 
 ### Se algo der errado
 
-**A tela fica branca e nada carrega.** Quase sempre é o servidor do Metro travado ou servindo de outra pasta. Derrube o processo que estiver na porta 8081 e suba de novo limpando o cache:
+**A tela fica branca e nada carrega.** Quase sempre é o servidor do Metro travado ou servindo arquivos de outra pasta. Encerre o processo que estiver usando a porta 8081 e inicie novamente, limpando o cache:
 
 ```bash
 npx expo start --clear
 ```
 
-**O app não acha o servidor.** Em emulador Android, redirecione a porta:
+**O app não encontra o servidor.** Em emuladores Android, redirecione a porta:
 
 ```bash
 adb reverse tcp:8081 tcp:8081
 ```
 
-**Erro de módulo nativo não encontrado** depois de instalar uma dependência nova. Dependências com código nativo exigem recompilar, não basta reiniciar o Metro. Rode `npx expo run:android` de novo.
+**Erro de módulo nativo não encontrado após instalar uma dependência nova.** Dependências com código nativo exigem uma nova compilação. Não basta reiniciar o Metro. Execute `npx expo run:android` novamente.
 
 ### Sobre o Expo Go
 
-O projeto foi testado compilando com `npx expo run:android`, que é o caminho recomendado aqui. O Expo Go até abre o app, mas as notificações das pendências dependem de agendamento nativo e não funcionam de forma confiável por lá.
+O projeto foi testado com a compilação feita por `npx expo run:android`, que é o caminho recomendado aqui. O Expo Go até abre o app, mas as notificações das pendências dependem de agendamento nativo e não funcionam de forma confiável por lá.
 
 ## Dependências
 
@@ -138,16 +138,16 @@ O projeto foi testado compilando com `npx expo run:android`, que é o caminho re
 |---|---|
 | `@react-navigation/native` | Núcleo da navegação |
 | `@react-navigation/native-stack` | Pilha de telas nativa |
-| `@react-navigation/bottom-tabs` | Abas inferiores, com barra customizada |
-| `react-native-screens` | Telas nativas, para a navegação ficar fluida |
-| `react-native-safe-area-context` | Respeita notch e barra de gestos |
+| `@react-navigation/bottom-tabs` | Abas inferiores, com barra personalizada |
+| `react-native-screens` | Telas nativas, para deixar a navegação mais fluida |
+| `react-native-safe-area-context` | Respeita o notch e a barra de gestos |
 
 ### Animação e gestos
 
 | Pacote | Para que serve |
 |---|---|
-| `react-native-reanimated` | Animações rodando na thread de UI |
-| `react-native-worklets` | Executa as funções de animação fora da thread de JS |
+| `react-native-reanimated` | Animações executadas na thread de UI |
+| `react-native-worklets` | Executa funções de animação fora da thread de JS |
 | `react-native-gesture-handler` | Arrastar e tocar com resposta nativa |
 
 ### Interface
@@ -163,42 +163,42 @@ O projeto foi testado compilando com `npx expo run:android`, que é o caminho re
 
 | Pacote | Para que serve |
 |---|---|
-| `@react-native-async-storage/async-storage` | Guarda contas, lançamentos e pendências no aparelho |
-| `expo-notifications` | Alarme das contas a vencer |
-| `expo-image-picker` | Escolher a foto de perfil |
-| `expo-file-system` | Guardar a foto escolhida |
+| `@react-native-async-storage/async-storage` | Armazena contas, lançamentos e pendências no aparelho |
+| `expo-notifications` | Alarmes das contas a vencer |
+| `expo-image-picker` | Escolha da foto de perfil |
+| `expo-file-system` | Armazenamento da foto escolhida |
 
 ## Estrutura do projeto
 
-```
+```text
 src/
 ├── assets/          imagens e logo
-├── components/      componentes reaproveitados entre telas
+├── components/      componentes reutilizados entre telas
 ├── context/         estado global de contas e pendências
-├── hooks/           lógica reaproveitável
+├── hooks/           lógica reutilizável
 ├── pages/           uma pasta por tela
 ├── services/        acesso a armazenamento, notificações e câmera
 ├── theme/           cores e estilos compartilhados
 └── utils/           formatação de valores e datas
 ```
 
-As telas nunca falam direto com módulos nativos. Tudo passa por `services/`, o que mantém a interface separada da plataforma e facilita portar o app depois.
+As telas nunca acessam diretamente os módulos nativos. Tudo passa por `services/`, o que mantém a interface separada da plataforma e facilita a portabilidade do app no futuro.
 
 ## Licença e uso livre
 
-Este projeto é **open source** sob a licença [MIT](LICENSE).
+Este projeto é **open source**, sob a licença [MIT](LICENSE).
 
-Na prática, isso quer dizer que **você pode usar tudo daqui livremente**:
+Na prática, isso significa que **você pode usar tudo daqui livremente**:
 
-- copiar o código, inteiro ou em pedaços
-- modificar o que quiser
-- usar em projetos pessoais, acadêmicos ou comerciais
-- distribuir, publicar em loja e até vender
+- Copiar o código, inteiro ou em partes.
+- Modificar o que quiser.
+- Usar em projetos pessoais, acadêmicos ou comerciais.
+- Distribuir, publicar em lojas e até vender.
 
-Não precisa pedir autorização e não precisa pagar nada. A única condição é manter o aviso de copyright e o texto da licença junto das partes que você reaproveitar. Se o projeto te ajudou, um crédito é bem-vindo, mas não é obrigatório.
+Não precisa pedir autorização nem pagar nada. A única condição é manter o aviso de copyright e o texto da licença junto às partes que você reutilizar. Se o projeto te ajudou, um crédito é bem-vindo, mas não é obrigatório.
 
-O software é fornecido como está, sem garantias. Ele guarda dados financeiros apenas no aparelho e nunca passou por auditoria de segurança, então use por sua conta e risco.
+O software é fornecido como está, sem garantias. Ele armazena dados financeiros apenas no aparelho e nunca passou por uma auditoria de segurança. Portanto, use por sua conta e risco.
 
 ## Autor
 
-Feito por [Victor Yuri Vargas Koss](https://github.com/V1CTOR022).
+Feito por [Victor Yuri Vargas Koss](https://github.com/V1CTOR022).****
