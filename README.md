@@ -210,4 +210,4 @@ O software é fornecido como está, sem garantias. Ele guarda dados financeiros 
 
 ## Autor
 
-Feito por [Victor Vargas](https://github.com/V1CTOR022).
+Feito por [Victor Yuri Vargas Koss](https://github.com/V1CTOR022).
